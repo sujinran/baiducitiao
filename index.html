@@ -1,0 +1,78 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<style>
+.head{text-align:center;}
+.row{padding:5px;}
+.row input{line-height:20px;border:1px solid #2f96ef;}
+.btn{cursor:pointer;}
+.box{float:left;display:none1;}
+</style>
+</head>
+<body>
+<div class="head">15秒刷新一下页面
+<div class="row">1. <input type="text" id="url1" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E7%94%B5%E8%A7%86%E5%89%A7&rsv_pq=b0674c44001502f5&rsv_t=7002RhR8xLklWsziUfG2BP9Ox4BmDaU3PuqDPWfhXAva5hSMje89tF43HuE&rqlang=cn&rsv_enter=1&rsv_dl=ib&rsv_sug3=4&rsv_sug1=2&rsv_sug7=001&rsv_n=2"> <button type="button" class="btn" data-no="1" data-stat="0">开始~</button></div>
+<div class="row">2. <input type="text" id="url2" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E7%94%B5%E5%BD%B1&oq=%25E8%2582%2596%25E6%2588%2598%25E7%2594%25B5%25E8%25A7%2586%25E5%2589%25A7&rsv_pq=a8c33a8f000f111f&rsv_t=ac393fvp6w28QpeqDCG3jhEM%2F3PVeAE%2B24sgD8kiJWN5JJhFf5TSZDWI2%2Bo&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1419&rsv_n=2&rsv_sug3=5&rsv_sug1=4&rsv_sug7=100&rsv_sug4=1419&rsv_sug=1"> <button type="button" class="btn" data-no="2" data-stat="0">开始~</button></div>
+<div class="row">3. <input type="text" id="url3" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E6%AD%8C%E6%9B%B2&oq=%25E8%2582%2596%25E6%2588%2598%25E7%2594%25B5%25E5%25BD%25B1&rsv_pq=d5ab1eec00155f7c&rsv_t=5e2dSsQCvXNnL63nZ1XmCJSybiXEDvlBvQMxTnzemUCUL5zuWRh%2Fx6EGl5U&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1116&rsv_n=2&rsv_sug3=6&rsv_sug1=5&rsv_sug7=100&rsv_sug4=1117&rsv_sug=1"> <button type="button" class="btn" data-no="3" data-stat="0">开始~</button></div>
+<div class="row">4. <input type="text" id="url4" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E7%BB%BC%E8%89%BA&oq=%25E8%2582%2596%25E6%2588%2598%25E6%25AD%258C%25E6%259B%25B2&rsv_pq=bc8c10ab0015ad94&rsv_t=5a50t0BSedjKslaoVPDkBEIQLRjRo5K6hdRd11xZ8c3xRGSpAIiIXxzOymE&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1220&rsv_n=2&rsv_sug3=7&rsv_sug1=6&rsv_sug7=100&rsv_sug4=1220&rsv_sug=1"> <button type="button" class="btn" data-no="4" data-stat="0">开始~</button></div>
+<div class="row">5. <input type="text" id="url5" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E9%87%87%E8%AE%BF&oq=%25E8%2582%2596%25E6%2588%2598%25E7%25BB%25BC%25E8%2589%25BA&rsv_pq=9385210100041226&rsv_t=5755fLhHz0qolEffnM5K0x7CqQrgw6pSEMbBQW7jjvmZ8PmR5B8etIHVZPc&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1081&rsv_n=2&rsv_sug3=8&rsv_sug1=7&rsv_sug7=100&prefixsug=%25E8%2582%2596%25E6%2588%2598%25E9%2587%2587%25E8%25AE%25BF&rsp=0&rsv_sug4=1081&rsv_sug=1"> <button type="button" class="btn" data-no="5" data-stat="0">开始~</button></div>
+<div class="row">6. <input type="text" id="url6" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E6%BC%94%E6%8A%80&oq=%25E8%2582%2596%25E6%2588%2598%25E9%2587%2587%25E8%25AE%25BF&rsv_pq=bc24dc890015d5e7&rsv_t=15ccmLJJ%2FC%2F832KzIOjzWOTWgm7M6ncMLg39otwHZLWLjuRTen3UDD75IEk&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1103&rsv_n=2&rsv_sug3=9&rsv_sug1=8&rsv_sug7=100&rsv_sug4=1103&rsv_sug=1"> <button type="button" class="btn" data-no="6" data-stat="0">开始~</button></div>
+<div class="row">7. <input type="text" id="url7" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E8%88%9E%E5%8F%B0&oq=%25E8%2582%2596%25E6%2588%2598%25E6%25BC%2594%25E6%258A%2580&rsv_pq=bc846c7700050b99&rsv_t=5f55gQJSJqIabvu8caH7XvcIMmdWG%2FWhtkKNZJLtv0smO3EN7OTDXGkkHDk&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1391&rsv_n=2&rsv_sug3=10&rsv_sug1=9&rsv_sug7=100&rsv_sug4=1392&rsv_sug=1"> <button type="button" class="btn" data-no="7" data-stat="0">开始~</button></div>
+<div class="row">8. <input type="text" id="url8" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E6%9D%82%E5%BF%97&oq=%25E8%2582%2596%25E6%2588%2598%25E6%259D%2582%25E5%25BF%2597&rsv_pq=e8ecb3f1000a23fe&rsv_t=cf2daPSPudOZhDz37cSmYZX3NCDWtTKaAdEmKBaSc4YXr6VxCmrrX2YY1tg&rqlang=cn&rsv_enter=0&rsv_dl=tb&rsv_sug=1"> <button type="button" class="btn" data-no="8" data-stat="0">开始~</button></div>
+<div class="row">9. <input type="text" id="url9" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E5%A3%81%E7%BA%B8&oq=%25E8%2582%2596%25E6%2588%2598%25E6%259D%2582%25E5%25BF%2597&rsv_pq=c534403b0002a64b&rsv_t=032a4MnoN3C019yRQqc%2FDZsy3rvnQFxu5zCEtp2lBff7krn8MlNCoue1IVA&rqlang=cn&rsv_enter=0&rsv_dl=tb&rsv_n=2&rsv_sug3=12&rsv_sug1=10&rsv_sug7=100&inputT=921&rsv_sug4=922&rsv_sug=1"> <button type="button" class="btn" data-no="9" data-stat="0">开始~</button></div>
+<div class="row">10. <input type="text" id="url10" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E7%AC%91%E5%AE%B9&oq=%25E8%2582%2596%25E6%2588%2598%25E5%25A3%2581%25E7%25BA%25B8&rsv_pq=cd45308d0002aaa4&rsv_t=6209EJgIHQ3udxtnxS%2B3DsVMjOEWDbZzQGo%2BvSo%2BLnspUwCudVG4xgBIXrw&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=845&rsv_n=2&rsv_sug3=13&rsv_sug1=11&rsv_sug7=100&rsv_sug4=845&rsv_sug=1"> <button type="button" class="btn" data-no="10" data-stat="0">开始~</button></div>
+<div class="row">12. <input type="text" id="url12" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E5%8F%A4%E8%A3%85&oq=%25E8%2582%2596%25E6%2588%2598%25E7%25AC%2591%25E5%25AE%25B9&rsv_pq=bc0f775d00021995&rsv_t=a8a4D14YMbzWHQO8dc2i7oDqJr84nMj3S4O0aTKYYbVvillyl6Cy91dRBdo&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=914&rsv_n=2&rsv_sug3=14&rsv_sug1=12&rsv_sug7=100&rsv_sug4=914&rsv_sug=1"> <button type="button" class="btn" data-no="12" data-stat="0">开始~</button></div>
+<div class="row">13. <input type="text" id="url13" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E9%99%88%E6%83%85%E4%BB%A4&oq=%25E8%2582%2596%25E6%2588%2598%25E5%258F%25A4%25E8%25A3%2585&rsv_pq=ea31e29c00015b38&rsv_t=a178s2yLahuOf2OCXKZ%2BAh3o%2BG9xF38qmU%2BPauNY6TOEGRa1GT7KmcbjPRg&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1110&rsv_n=2&rsv_sug3=15&rsv_sug1=13&rsv_sug7=100&rsv_sug4=1110&rsv_sug=1"> <button type="button" class="btn" data-no="13" data-stat="0">开始~</button></div>
+<div class="row">14. <input type="text" id="url14" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E8%AF%9B%E4%BB%99%E5%BC%A0%E5%B0%8F%E5%87%A1&oq=%25E8%2582%2596%25E6%2588%2598%25E9%2599%2588%25E6%2583%2585%25E4%25BB%25A4&rsv_pq=c828f9f900164045&rsv_t=98e7Z950nEHwg%2FVlZvpaS6TBFHXJ%2B4NhoBLoZe%2BOGXK7Io%2FTWEArXb8KWQs&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=979&rsv_n=2&rsv_sug3=16&rsv_sug1=14&rsv_sug7=100&rsv_sug4=979&rsv_sug=1"> <button type="button" class="btn" data-no="14" data-stat="0">开始~</button></div>
+<div class="row">15. <input type="text" id="url15" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E4%BD%99%E7%94%9F%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99&oq=%25E8%2582%2596%25E6%2588%2598%25E8%25AF%259B%25E4%25BB%2599%25E5%25BC%25A0%25E5%25B0%258F%25E5%2587%25A1&rsv_pq=a2e7f0f000029e97&rsv_t=3a3bht5JMNoXepIpiv7ryOal1UcXTzfBdin%2BFfOeDZgWuXWVwXshCLHT3hk&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1010&rsv_n=2&rsv_sug3=17&rsv_sug1=15&rsv_sug7=100&rsv_sug4=1010&rsv_sug=1"> <button type="button" class="btn" data-no="15" data-stat="0">开始~</button></div>
+<div class="row">16. <input type="text" id="url16" size="50" value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%82%96%E6%88%98%E7%8B%BC%E6%AE%BF%E4%B8%8B&oq=%25E8%2582%2596%25E6%2588%2598%25E4%25BD%2599%25E7%2594%259F%25E8%25AF%25B7%25E5%25A4%259A%25E6%258C%2587%25E6%2595%2599&rsv_pq=d2e5d6490015900d&rsv_t=94c69zEypc91Q7NWI%2Bl7ifpNOI2vPBno63mT6cNB%2BWbkAYgEhG3%2FAEK%2B%2By4&rqlang=cn&rsv_enter=0&rsv_dl=tb&inputT=1010&rsv_n=2&rsv_sug3=18&bs=%E8%82%96%E6%88%98%E4%BD%99%E7%94%9F%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99"> <button type="button" class="btn" data-no="16" data-stat="0">开始~</button></div>
+
+</div>
+<div class="wins">
+<div class="box" id="box1"></div>
+<div class="box" id="box2"></div>
+<div class="box" id="box3"></div>
+<div class="box" id="box4"></div>
+<div class="box" id="box5"></div>
+<div class="box" id="box6"></div>
+<div class="box" id="box7"></div>
+<div class="box" id="box8"></div>
+<div class="box" id="box9"></div>
+<div class="box" id="box10"></div>
+<div class="box" id="box12"></div>
+<div class="box" id="box13"></div>
+<div class="box" id="box14"></div>
+<div class="box" id="box15"></div>
+<div class="box" id="box16"></div>
+</div>
+<script>
+$(function(){
+	var timer={};
+	$(".btn").on("click",function(){
+		var no=$(this).data("no"),stat=$(this).data("stat");
+		console.log(stat);
+		if(stat==1){
+			$("#box"+no).html('');
+			$(this).data('stat',0).text('开始~');
+			clearInterval(timer['t'+no]);
+		}else{
+			if($("#url"+no).val()==""){alert("请输入网址");return false;}
+			$("#box"+no).html('<iframe id="frame'+no+'" src="'+$("#url"+no).val()+'" />');
+			$(this).data('stat',1).text('进行中,点击停止');
+			timer['t'+no]=setInterval(function(){
+				$("#box"+no).html('');
+				$("#box"+no).html('<iframe id="frame'+no+'" src="'+$("#url"+no).val()+'" />');
+				document.getElementById('frame'+no).contentWindow.location.reload();
+			},15000);
+		}
+	});
+})
+</script>
+</body>
+</html>
